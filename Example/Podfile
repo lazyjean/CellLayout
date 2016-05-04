@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'CellLayout_Example', :exclusive => true do
+  pod 'CellLayout', :path => '../'
+end
+
+target 'CellLayout_Tests', :exclusive => true do
+  pod 'CellLayout', :path => '../'
+
+  
+end
