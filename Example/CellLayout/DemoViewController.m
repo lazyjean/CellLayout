@@ -39,8 +39,6 @@
 
 - (IBAction)showDynamicTable:(id)sender {
     DemoViewModel *model = [[DemoViewModel alloc] init];
-    NSURL *url = [model urlForScheme:@"demo" storyboardName:@"myboard"];
-    NSLog(@"%@", url);
     LayoutController *controller = [LayoutController instantiateWithStoryboardName:@"Table" viewModel:model];
     [self.navigationController pushViewController:controller animated:YES];
 }
