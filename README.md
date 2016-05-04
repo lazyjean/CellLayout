@@ -81,17 +81,18 @@ iOS开发中，UI的开发是比较费时费力的工作，而storyboard的出�
 @end
 ```
 
-3. 然后直接直接构造LayoutController使用，代码如下：
-
+3.然后直接直接构造LayoutController使用，代码如下：
 ```ObjC
 DemoViewModel *model = [[DemoViewModel alloc] init];
  LayoutController *controller = [LayoutController instantiateWithStoryboardName:@"Table" viewModel:model];
  [self.navigationController pushViewController:controller animated:YES];
 ```
+
 ## Requirements
 ```
 需要iOS7.0或更新版本
 ```
+
 ## Installation
 
 CellLayout is available through [CocoaPods](http://cocoapods.org). To install
