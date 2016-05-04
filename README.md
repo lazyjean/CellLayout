@@ -10,7 +10,7 @@ iOS开发中，UI的开发是比较费时费力的工作，而storyboard的出�
 ## 样例
 
 1. 在storybaord中拖出你想要的UI,并且设置好自动布局信息如下图所示
-![](http://git.oschina.net/uploads/images/2016/0504/214026_d85b4ac0_122810.png)
+![storybaord](http://git.oschina.net/uploads/images/2016/0504/215047_646e0ce9_122810.png)
 
 2. 创建自己的ViewModel,代码中如下:
 
