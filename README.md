@@ -7,7 +7,7 @@
 
 ## 说明
 iOS开发中，UI的开发是比较费时费力的工作，而storyboard的出现，可以大大的提高生产效率，而且不会带来太多的性能问题。但是storyboard在使用上还是不够的方便，该组件就是针对storyboard设计的，可以方便的构造基于TableView的页面。
-## 样便
+## 样例
 
 1. 在storybaord中拖出你想要的UI,并且设置好自动布局信息如下图所示
 ![](http://git.oschina.net/uploads/images/2016/0504/214026_d85b4ac0_122810.png)
