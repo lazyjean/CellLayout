@@ -1,42 +1,20 @@
-#
-# Be sure to run `pod lib lint CellLayout.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
   s.name             = "CellLayout"
-  s.version          = "0.1.0"
-  s.summary          = "A short description of CellLayout."
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.version          = "0.8.13"
+  s.summary          = "Table组件的封装"
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+                        这个组件结合storybaord，可以高效的开发Table类型的页面，动态高度可变的Cell
                        DESC
-
-  s.homepage         = "https://github.com/<GITHUB_USERNAME>/CellLayout"
-  # s.screenshots     = "www.example.com/screenshots_1", "www.example.com/screenshots_2"
+  s.homepage         = "http://git.oschina.net/leeszi/CellLayout"
   s.license          = 'MIT'
   s.author           = { "LiuZhen" => "lazy66@me.com" }
-  s.source           = { :git => "https://github.com/<GITHUB_USERNAME>/CellLayout.git", :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
-
-  s.ios.deployment_target = '8.0'
-
+  s.source           = { :git => "https://git.oschina.net/leeszi/CellLayout.git", :tag => "#{s.version}" }
+  s.ios.deployment_target = '7.0'
   s.source_files = 'CellLayout/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'CellLayout' => ['CellLayout/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.public_header_files = 'CellLayout/Classes/*.h'
+  s.dependency 'ReactiveCocoa', '~> 2.5'
+  s.dependency 'UITableView+FDTemplateLayoutCell', '~> 1.4'
+  s.dependency 'ReactiveViewModel', '~> 0.3'
+  s.dependency 'NSURL+QueryDictionary', '~> 1.1.0'
 end

@@ -1,0 +1,33 @@
+PODS:
+  - CellLayout (0.8.13):
+    - NSURL+QueryDictionary (~> 1.1.0)
+    - ReactiveCocoa (~> 2.5)
+    - ReactiveViewModel (~> 0.3)
+    - UITableView+FDTemplateLayoutCell (~> 1.4)
+  - NSURL+QueryDictionary (1.1.0)
+  - ReactiveCocoa (2.5):
+    - ReactiveCocoa/UI (= 2.5)
+  - ReactiveCocoa/Core (2.5):
+    - ReactiveCocoa/no-arc
+  - ReactiveCocoa/no-arc (2.5)
+  - ReactiveCocoa/UI (2.5):
+    - ReactiveCocoa/Core
+  - ReactiveViewModel (0.3):
+    - ReactiveCocoa (~> 2.4)
+  - UITableView+FDTemplateLayoutCell (1.4)
+
+DEPENDENCIES:
+  - CellLayout (from `../`)
+
+EXTERNAL SOURCES:
+  CellLayout:
+    :path: ../
+
+SPEC CHECKSUMS:
+  CellLayout: fd2ffac8b65ea057fed0dd2c16f4f14719a34e8c
+  NSURL+QueryDictionary: dd0a5fec689a9b4780b6fa0e0225c01ca3ea653e
+  ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
+  ReactiveViewModel: 58918dcbcec2d3151195ab1ed9163c57a8163999
+  UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
+
+COCOAPODS: 0.39.0

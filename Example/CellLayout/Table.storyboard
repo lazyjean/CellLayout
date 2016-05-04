@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Layout Controller-->
+        <scene sceneID="o3O-IR-DeD">
+            <objects>
+                <tableViewController storyboardIdentifier="LayoutController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="szL-9u-U5d" customClass="LayoutController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="97" sectionHeaderHeight="28" sectionFooterHeight="28" id="2Ag-ps-z5L">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="gDM-Xf-jYU">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" red="0.16078431369999999" green="0.68235294120000001" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                        </view>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DemoTableViewCell" rowHeight="97" id="Ihz-1w-QcO" customClass="DemoTableViewCell">
+                                <rect key="frame" x="0.0" y="128" width="600" height="97"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ihz-1w-QcO" id="ndB-Lo-e6i">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="96.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KKg-dN-p1j">
+                                            <rect key="frame" x="10" y="10" width="580" height="76.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="KKg-dN-p1j" firstAttribute="top" secondItem="ndB-Lo-e6i" secondAttribute="top" constant="10" id="KaQ-Kq-e3q"/>
+                                        <constraint firstItem="KKg-dN-p1j" firstAttribute="leading" secondItem="ndB-Lo-e6i" secondAttribute="leading" constant="10" id="MP9-cy-3gW"/>
+                                        <constraint firstAttribute="trailing" secondItem="KKg-dN-p1j" secondAttribute="trailing" constant="10" id="POT-xC-DZh"/>
+                                        <constraint firstAttribute="bottom" secondItem="KKg-dN-p1j" secondAttribute="bottom" constant="10" id="tTE-4F-KkC"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="dynamicLabel" destination="KKg-dN-p1j" id="3ty-q1-RCz"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="szL-9u-U5d" id="1SC-oa-nE3"/>
+                            <outlet property="delegate" destination="szL-9u-U5d" id="JuM-Dq-a8B"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6T7-Pr-IBq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="734" y="320"/>
+        </scene>
+    </scenes>
+</document>
