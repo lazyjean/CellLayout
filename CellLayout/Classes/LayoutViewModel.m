@@ -7,7 +7,7 @@
 //
 
 #import "LayoutViewModel.h"
-#import <NSURL+QueryDictionary/NSURL+QueryDictionary.h>
+#import "NSURL+QueryDictionary.h"
 
 @implementation LayoutViewModel
 
