@@ -15,6 +15,7 @@
 
 #import <ReactiveCocoa/RACEXTScope.h>
 #import "CellLayoutTableHeader.h"
+#import "CellLayoutTableFooter.h"
 
 @implementation DemoViewModel
 
@@ -41,12 +42,23 @@
     
     
     CellLayoutTableHeader *header = [[CellLayoutTableHeader alloc] init];
-    header.height = 500;
+    header.height = 128;
+    header.identifier = @"v1";
     header.configHeader = ^(UIView *view, UIViewController *parent){
         view.backgroundColor = [UIColor colorWithRed:0.6824 green:0.1091 blue:0.1599 alpha:1.0];
     };
     
     storage.tableHeader = header;
+    
+    CellLayoutTableFooter *footer = [[CellLayoutTableFooter alloc] init];
+    footer.height = 128;
+    footer.identifier = @"v2";
+    footer.configFooter = ^(UIView *view, UIViewController *parent){
+        view.backgroundColor = [UIColor colorWithRed:0.6824 green:0.1091 blue:0.1599 alpha:1.0];
+    };
+    
+    storage.tableFooter = footer;
+
     
     [storage newSectionWithTitle:@"文章标题" headerHeight:19 footerHeight:1];
 

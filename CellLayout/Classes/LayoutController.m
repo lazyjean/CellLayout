@@ -81,15 +81,26 @@
     //配置头信息
     if (header) {
         
+        //如果设置了identifier，则优先查找
+        if (header.identifier && header.identifier.length > 0) {
+            for (UIView *v in self.viewsPool) {
+                if ([v.restorationIdentifier isEqualToString:header.identifier]) {
+                    self.tableView.tableHeaderView = nil;
+                    self.tableView.tableHeaderView = v;
+                    break;
+                }
+            }
+        }
+        
+        //如果没有通过identifier查找到header, 则手工创建一个
         if (!self.tableView.tableHeaderView) {
             self.tableView.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, header.height)];
         }
-        else {
-            //修改高度
-            CGRect frame = self.tableView.tableHeaderView.frame;
-            frame.size.height = header.height;
-            self.tableView.tableHeaderView.frame = frame;
-        }
+        
+        //配置高度
+        CGRect frame = self.tableView.tableHeaderView.frame;
+        frame.size.height = header.height;
+        self.tableView.tableHeaderView.frame = frame;
         
         //调用配置方法
         if (header.configHeader) {
@@ -105,20 +116,30 @@
     //配置footer信息
     if (footer) {
         
+        //如果设置了identifier，则优先查找
+        if (footer.identifier && footer.identifier.length > 0) {
+            for (UIView *v in self.viewsPool) {
+                if ([v.restorationIdentifier isEqualToString:footer.identifier]) {
+                    self.tableView.tableFooterView = nil;
+                    self.tableView.tableFooterView = v;
+                    break;
+                }
+            }
+        }
+
+        //如果没有通过identifier查找到footer, 则手工创建一个
         if (!self.tableView.tableFooterView) {
             self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, footer.height)];
         }
-        else {
-            
-            //修改高度
-            CGRect frame = self.tableView.tableFooterView.frame;
-            frame.size.height = footer.height;
-            self.tableView.tableFooterView.frame = frame;
-        }
+
+        //修改高度
+        CGRect frame = self.tableView.tableFooterView.frame;
+        frame.size.height = footer.height;
+        self.tableView.tableFooterView.frame = frame;
         
         //调用配置方法
         if (footer.configFooter) {
-            footer.configFooter(self.tableView.tableFooterView);
+            footer.configFooter(self.tableView.tableFooterView, self);
         }
     }
     else {

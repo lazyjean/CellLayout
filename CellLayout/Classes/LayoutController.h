@@ -13,6 +13,11 @@
 @interface LayoutController : UITableViewController
 
 /**
+ *  如果用户需要多种的header和footer的类型，那么可以在storyboard上面将准备好的view关联到这里，然后在TableHeader里面，设置好类名，则会将第一个发现的Header填上去，Footer同理
+ */
+@property (strong, nonatomic) IBOutletCollection(UIView) NSArray *viewsPool;
+
+/**
  *  构造一个LayoutController对象
  *
  *  @param storyboardName storyboard的名字

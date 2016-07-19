@@ -13,6 +13,12 @@
 @interface CellLayoutTableFooter : NSObject
 
 @property (nonatomic) CGFloat height;
-@property (nonatomic, copy) void (^configFooter)(UIView *footer);
+
+/**
+ *  如果设置了此属性，则会优先在view的池中寻找对应的header/footer(对应的restoration ID)
+ */
+@property (nonatomic, strong) NSString *identifier;
+
+@property (nonatomic, copy) void (^configFooter)(UIView *footer, UIViewController *parent);
 
 @end
