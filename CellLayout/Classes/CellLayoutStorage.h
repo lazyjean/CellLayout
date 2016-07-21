@@ -34,6 +34,17 @@
  */
 @property (nonatomic, readonly) CellLayoutManager *layoutManager;
 
+/**
+ *  设置左侧导航按钮
+ */
+@property (nonatomic, strong) UIBarButtonItem *leftBarButtonItem;
+
+/**
+ *  设置右侧导航按钮
+ */
+@property (nonatomic, strong) UIBarButtonItem *rightBarButtonItem;
+
+
 - (CellLayoutManager *)layoutManagerForIndexPath:(NSIndexPath *)indexPath;
 
 - (CellLayoutSection *)layoutSectionForSection:(NSInteger)section;

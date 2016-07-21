@@ -69,7 +69,15 @@
     @weakify(self);
     [[[RACObserve(self.viewModel, storage) takeUntil:self.rac_willDeallocSignal] ignore:nil] subscribeNext:^(id x) {
         @strongify(self);
+        
+        //设置导航
+        self.navigationItem.leftBarButtonItem = self.viewModel.storage.leftBarButtonItem;
+        self.navigationItem.rightBarButtonItem = self.viewModel.storage.rightBarButtonItem;
+        
+        //设置Table的Header和Footer
         [self configHeaderAndFooter];
+        
+        //刷新表格
         [self.tableView reloadData];
     }];
 }
