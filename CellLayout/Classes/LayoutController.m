@@ -59,6 +59,8 @@
     
     self.viewModel.containerWidth = self.view.frame.size.width;
     
+    self.viewModel.controller = self;
+    
     //调用viewDidLoad
     if (self.viewModel.viewDidLoad) {
         self.viewModel.viewDidLoad(self);

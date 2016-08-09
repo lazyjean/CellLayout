@@ -24,6 +24,8 @@
  */
 @property (nonatomic, copy) void(^viewDidLoad)(UIViewController *controller);
 
+@property (nonatomic, weak) UIViewController *controller;
+
 - (void)buildLayoutStorage;
 
 /**
