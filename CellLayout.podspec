@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = "CellLayout"
-  s.version          = "0.9.1"
+  s.version          = "0.9.2"
   s.summary          = "Table组件的封装"
 
   s.description      = <<-DESC
