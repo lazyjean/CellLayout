@@ -1,10 +1,8 @@
 PODS:
-  - CellLayout (0.8.13):
-    - NSURL+QueryDictionary (~> 1.1.0)
+  - CellLayout (0.9.1):
     - ReactiveCocoa (~> 2.5)
     - ReactiveViewModel (~> 0.3)
     - UITableView+FDTemplateLayoutCell (~> 1.4)
-  - NSURL+QueryDictionary (1.1.0)
   - ReactiveCocoa (2.5):
     - ReactiveCocoa/UI (= 2.5)
   - ReactiveCocoa/Core (2.5):
@@ -21,13 +19,14 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   CellLayout:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  CellLayout: fd2ffac8b65ea057fed0dd2c16f4f14719a34e8c
-  NSURL+QueryDictionary: dd0a5fec689a9b4780b6fa0e0225c01ca3ea653e
+  CellLayout: f99c245802d3d1a068773fc9237c87249bf65114
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   ReactiveViewModel: 58918dcbcec2d3151195ab1ed9163c57a8163999
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 34886f4f3e937c473bcfa8716747b842c866ec43
+
+COCOAPODS: 1.2.0.beta.3

@@ -1,5 +1,8 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CellLayout" "${PODS_ROOT}/Headers/Public/NSURL+QueryDictionary" "${PODS_ROOT}/Headers/Public/ReactiveCocoa" "${PODS_ROOT}/Headers/Public/ReactiveViewModel" "${PODS_ROOT}/Headers/Public/UITableView+FDTemplateLayoutCell"
-OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/CellLayout" -isystem "${PODS_ROOT}/Headers/Public/NSURL+QueryDictionary" -isystem "${PODS_ROOT}/Headers/Public/ReactiveCocoa" -isystem "${PODS_ROOT}/Headers/Public/ReactiveViewModel" -isystem "${PODS_ROOT}/Headers/Public/UITableView+FDTemplateLayoutCell"
-OTHER_LDFLAGS = $(inherited) -ObjC -l"CellLayout" -l"NSURL+QueryDictionary" -l"ReactiveCocoa" -l"ReactiveViewModel" -l"UITableView+FDTemplateLayoutCell" -framework "Foundation"
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/CellLayout" "${PODS_ROOT}/Headers/Public/ReactiveCocoa" "${PODS_ROOT}/Headers/Public/ReactiveViewModel" "${PODS_ROOT}/Headers/Public/UITableView+FDTemplateLayoutCell"
+LIBRARY_SEARCH_PATHS = $(inherited) "$PODS_CONFIGURATION_BUILD_DIR/CellLayout" "$PODS_CONFIGURATION_BUILD_DIR/ReactiveCocoa" "$PODS_CONFIGURATION_BUILD_DIR/ReactiveViewModel" "$PODS_CONFIGURATION_BUILD_DIR/UITableView+FDTemplateLayoutCell"
+OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/CellLayout" -isystem "${PODS_ROOT}/Headers/Public/ReactiveCocoa" -isystem "${PODS_ROOT}/Headers/Public/ReactiveViewModel" -isystem "${PODS_ROOT}/Headers/Public/UITableView+FDTemplateLayoutCell"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"CellLayout" -l"ReactiveCocoa" -l"ReactiveViewModel" -l"UITableView+FDTemplateLayoutCell"
+PODS_BUILD_DIR = $BUILD_DIR
+PODS_CONFIGURATION_BUILD_DIR = $PODS_BUILD_DIR/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_ROOT = ${SRCROOT}/Pods

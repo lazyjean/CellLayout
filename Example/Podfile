@@ -1,4 +1,4 @@
 
-target 'CellLayout_Example', :exclusive => true do
+target 'CellLayout_Example' do
   pod 'CellLayout', :path => '../'
 end

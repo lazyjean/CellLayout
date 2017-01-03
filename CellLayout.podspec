@@ -10,11 +10,10 @@ Pod::Spec.new do |s|
   s.license          = 'MIT'
   s.author           = { "LiuZhen" => "lazy66@me.com" }
   s.source           = { :git => "https://git.oschina.net/leeszi/CellLayout.git", :tag => "#{s.version}" }
-  s.ios.deployment_target = '7.0'
+  s.ios.deployment_target = '8.0'
   s.source_files = 'CellLayout/Classes/**/*'
   s.public_header_files = 'CellLayout/Classes/*.h'
   s.dependency 'ReactiveCocoa', '~> 2.5'
   s.dependency 'UITableView+FDTemplateLayoutCell', '~> 1.4'
   s.dependency 'ReactiveViewModel', '~> 0.3'
-  s.dependency 'NSURL+QueryDictionary', '~> 1.1.0'
 end

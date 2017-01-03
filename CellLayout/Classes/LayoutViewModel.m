@@ -7,7 +7,6 @@
 //
 
 #import "LayoutViewModel.h"
-#import "NSURL+QueryDictionary.h"
 
 @implementation LayoutViewModel
 
@@ -31,11 +30,19 @@
 - (NSURL *)urlForScheme:(NSString *)scheme storyboardName:(NSString *)storyboardName {
     
     NSAssert(scheme && storyboardName, @"%@ method need address and storyboardName params not nil", NSStringFromSelector(_cmd));
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@://layout", scheme]];
+    
     NSData *data = [NSKeyedArchiver archivedDataWithRootObject:self];
     NSString *base64Data = [data base64EncodedStringWithOptions:0];
-    url = [url uq_URLByAppendingQueryDictionary:@{@"storyboard" : storyboardName, @"viewModel" : base64Data}];
-    return url;
+    
+    NSURLComponents *components = [[NSURLComponents alloc] init];
+    components.scheme = scheme;
+    components.host = @"layout";
+    
+    NSURLQueryItem *nameItem = [[NSURLQueryItem alloc] initWithName:@"storyboard" value:storyboardName];
+    NSURLQueryItem *dataItem = [[NSURLQueryItem alloc] initWithName:@"viewModel" value:base64Data];
+    components.queryItems = @[nameItem, dataItem];
+    
+    return components.URL;
 }
 
 @end
