@@ -25,11 +25,9 @@
 }
 
 - (IBAction)showDynamicTable:(id)sender {
-    DemoViewModel *model = [[DemoViewModel alloc] init];
-    NSURL *url = [model urlForScheme:@"demo" storyboardName:@"Table"];
-    NSLog(@"url is %@", url);
-    LayoutController *controller = [LayoutController instantiateWithStoryboardName:@"Table" viewModel:model];
-    [self.navigationController pushViewController:controller animated:YES];
+    DemoViewModel *vm = [[DemoViewModel alloc] init];
+    LayoutController *layout = [LayoutController instantiateWithStoryboardName:@"Main" identifier:@"layout" viewModel:vm];
+    [self.navigationController pushViewController:layout animated:YES];
 }
 
 @end

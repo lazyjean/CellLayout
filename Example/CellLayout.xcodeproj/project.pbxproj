@@ -16,7 +16,6 @@
 		6003F59E195388D20070C39A /* CLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F59D195388D20070C39A /* CLAppDelegate.m */; };
 		6003F5A9195388D20070C39A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5A8195388D20070C39A /* Images.xcassets */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
-		ED7BFA231CDA23C200B59BBB /* Table.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED7BFA221CDA23C200B59BBB /* Table.storyboard */; };
 		ED7BFA2A1CDA23FC00B59BBB /* DemoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7BFA251CDA23FC00B59BBB /* DemoTableViewCell.m */; };
 		ED7BFA2B1CDA23FC00B59BBB /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7BFA271CDA23FC00B59BBB /* DemoViewController.m */; };
 		ED7BFA2C1CDA23FC00B59BBB /* DemoViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = ED7BFA291CDA23FC00B59BBB /* DemoViewModel.m */; };
@@ -41,7 +40,6 @@
 		A7878907ABC6867629DEBAC1 /* Pods-CellLayout_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CellLayout_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CellLayout_Example/Pods-CellLayout_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		AD9C90B512485B93D5EE3CF9 /* libPods-CellLayout_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-CellLayout_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C4EF8186CB8FD70366A989E0 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		ED7BFA221CDA23C200B59BBB /* Table.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Table.storyboard; sourceTree = "<group>"; };
 		ED7BFA241CDA23FC00B59BBB /* DemoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoTableViewCell.h; sourceTree = "<group>"; };
 		ED7BFA251CDA23FC00B59BBB /* DemoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoTableViewCell.m; sourceTree = "<group>"; };
 		ED7BFA261CDA23FC00B59BBB /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 				ED7BFA271CDA23FC00B59BBB /* DemoViewController.m */,
 				ED7BFA281CDA23FC00B59BBB /* DemoViewModel.h */,
 				ED7BFA291CDA23FC00B59BBB /* DemoViewModel.m */,
-				ED7BFA221CDA23C200B59BBB /* Table.storyboard */,
 				6003F59C195388D20070C39A /* CLAppDelegate.h */,
 				6003F59D195388D20070C39A /* CLAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -179,6 +176,12 @@
 				CLASSPREFIX = CL;
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = LiuZhen;
+				TargetAttributes = {
+					6003F589195388D20070C39A = {
+						DevelopmentTeam = 4YN4954HZ8;
+						ProvisioningStyle = Manual;
+					};
+				};
 			};
 			buildConfigurationList = 6003F585195388D10070C39A /* Build configuration list for PBXProject "CellLayout" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -206,7 +209,6 @@
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
-				ED7BFA231CDA23C200B59BBB /* Table.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,7 +242,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		683A1E79944F17A5E2010F5B /* [CP] Embed Pods Frameworks */ = {
@@ -376,12 +378,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 4YN4954HZ8;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CellLayout/CellLayout-Prefix.pch";
 				INFOPLIST_FILE = "CellLayout/CellLayout-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "308e7ab7-31b1-42f8-9bd8-29bcc03421c8";
+				PROVISIONING_PROFILE_SPECIFIER = "XC: *";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -392,12 +399,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = 4YN4954HZ8;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "CellLayout/CellLayout-Prefix.pch";
 				INFOPLIST_FILE = "CellLayout/CellLayout-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "308e7ab7-31b1-42f8-9bd8-29bcc03421c8";
+				PROVISIONING_PROFILE_SPECIFIER = "XC: *";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -9,7 +9,7 @@
 #import <ReactiveViewModel/ReactiveViewModel.h>
 #import <CoreGraphics/CoreGraphics.h>
 
-@class CellLayoutStorage, UIViewController;
+@class CellLayoutStorage, UITableViewController, RACCommand;
 
 /**
  *  子类在继承该类时，如果需要和SchemeNavigator配合使用，那么需要实现NSCoding方法，将子类需要的参数进行归档即可
@@ -22,9 +22,13 @@
 /**
  *  该方法必须在init方法中调用，因为底层是在viewDidLoad中，buildLayoutStorage之前调用的该block,所以不能在buildLayoutStorage中调用该方法
  */
-@property (nonatomic, copy) void(^viewDidLoad)(UIViewController *controller);
+@property (nonatomic, copy) void(^viewDidLoad)(UITableViewController *controller);
 
-@property (nonatomic, weak) UIViewController *controller;
+//控制器指针
+@property (nonatomic, weak) UITableViewController *controller;
+
+//当下拉刷新错发时，该信号触发
+@property (nonatomic, strong) RACCommand *pullRefreshCommand;
 
 - (void)buildLayoutStorage;
 

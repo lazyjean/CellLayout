@@ -1,4 +1,4 @@
-
+platform :ios, '8.0'
 target 'CellLayout_Example' do
   pod 'CellLayout', :path => '../'
 end

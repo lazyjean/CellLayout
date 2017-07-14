@@ -37,27 +37,35 @@
 - (void)buildLayoutStorage {
     
     @weakify(self);
+
+    //下拉刷新
+    self.pullRefreshCommand = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(UIRefreshControl *input) {
+        return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [subscriber sendCompleted];
+            });
+            return nil;
+        }];
+    }];
     
     CellLayoutStorage *storage = [[CellLayoutStorage alloc] init];
-    
-    
-    CellLayoutTableHeader *header = [[CellLayoutTableHeader alloc] init];
-    header.height = 128;
-    header.identifier = @"v1";
-    header.configHeader = ^(UIView *view, UIViewController *parent){
-        view.backgroundColor = [UIColor colorWithRed:0.6824 green:0.1091 blue:0.1599 alpha:1.0];
-    };
-    
-    storage.tableHeader = header;
-    
-    CellLayoutTableFooter *footer = [[CellLayoutTableFooter alloc] init];
-    footer.height = 128;
-    footer.identifier = @"v2";
-    footer.configFooter = ^(UIView *view, UIViewController *parent){
-        view.backgroundColor = [UIColor colorWithRed:0.6824 green:0.1091 blue:0.1599 alpha:1.0];
-    };
-    
-    storage.tableFooter = footer;
+//    CellLayoutTableHeader *header = [[CellLayoutTableHeader alloc] init];
+//    header.height = 128;
+//    header.identifier = @"v1";
+//    header.configHeader = ^(UIView *view, UIViewController *parent){
+//        view.backgroundColor = [UIColor colorWithRed:0.6824 green:0.1091 blue:0.1599 alpha:1.0];
+//    };
+//    
+//    storage.tableHeader = header;
+//    
+//    CellLayoutTableFooter *footer = [[CellLayoutTableFooter alloc] init];
+//    footer.height = 128;
+//    footer.identifier = @"v2";
+//    footer.configFooter = ^(UIView *view, UIViewController *parent){
+//        view.backgroundColor = [UIColor colorWithRed:0.6824 green:0.1091 blue:0.1599 alpha:1.0];
+//    };
+//    
+//    storage.tableFooter = footer;
 
     
     [storage newSectionWithTitle:@"文章标题" headerHeight:19 footerHeight:1];

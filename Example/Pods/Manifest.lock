@@ -1,5 +1,5 @@
 PODS:
-  - CellLayout (0.9.1):
+  - CellLayout (1.0.0):
     - ReactiveCocoa (~> 2.5)
     - ReactiveViewModel (~> 0.3)
     - UITableView+FDTemplateLayoutCell (~> 1.4)
@@ -19,14 +19,14 @@ DEPENDENCIES:
 
 EXTERNAL SOURCES:
   CellLayout:
-    :path: "../"
+    :path: ../
 
 SPEC CHECKSUMS:
-  CellLayout: f99c245802d3d1a068773fc9237c87249bf65114
+  CellLayout: 78d0df2e90758da30e300296de20b8a065e90506
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   ReactiveViewModel: 58918dcbcec2d3151195ab1ed9163c57a8163999
   UITableView+FDTemplateLayoutCell: 234e1582bcc4e18461af91155123bb96538ed030
 
-PODFILE CHECKSUM: 34886f4f3e937c473bcfa8716747b842c866ec43
+PODFILE CHECKSUM: 5c529ceb5c77a1a8c1690a33fb5a5b65d94a9021
 
-COCOAPODS: 1.2.0.beta.3
+COCOAPODS: 1.2.1
