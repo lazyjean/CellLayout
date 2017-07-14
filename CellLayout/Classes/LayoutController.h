@@ -26,6 +26,7 @@
  *  @return LayoutController对象
  */
 + (instancetype)instantiateWithStoryboardName:(NSString *)storyboardName viewModel:(LayoutViewModel *)viewModel;
++ (instancetype)instantiateWithStoryboardName:(NSString *)storyboardName identifier:(NSString *)identifier viewModel:(LayoutViewModel *)viewModel;
 
 /**
  *  返回一个UINavigaitonController对象，其rootViewController是LayoutController

@@ -7,6 +7,7 @@
 //
 
 #import "LayoutViewModel.h"
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 @implementation LayoutViewModel
 

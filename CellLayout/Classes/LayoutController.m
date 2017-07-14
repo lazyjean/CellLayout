@@ -51,6 +51,12 @@
     controller.viewModel = viewModel;
     return nav;
 }
++ (instancetype)instantiateWithStoryboardName:(NSString *)storyboardName identifier:(NSString *)identifier viewModel:(LayoutViewModel *)viewModel {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:storyboardName bundle:nil];
+    LayoutController *controller = [storyboard instantiateViewControllerWithIdentifier:identifier];
+    controller.viewModel = viewModel;
+    return controller;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -82,6 +88,12 @@
         //刷新表格
         [self.tableView reloadData];
     }];
+
+    //
+    if (self.viewModel.pullRefreshCommand) {
+        self.tableView.refreshControl = [[UIRefreshControl alloc] init];
+        self.tableView.refreshControl.rac_command = self.viewModel.pullRefreshCommand;
+    }
 }
 
 - (void)configHeaderAndFooter {
