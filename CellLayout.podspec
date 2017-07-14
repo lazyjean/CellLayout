@@ -14,6 +14,6 @@ Pod::Spec.new do |s|
   s.source_files = 'CellLayout/Classes/**/*'
   s.public_header_files = 'CellLayout/Classes/*.h'
   s.dependency 'ReactiveCocoa', '~> 2.5'
-  s.dependency 'UITableView+FDTemplateLayoutCell', '~> 1.4'
+  s.dependency 'UITableView+FDTemplateLayoutCell', '~> 1.6'
   s.dependency 'ReactiveViewModel', '~> 0.3'
 end
