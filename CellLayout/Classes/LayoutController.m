@@ -230,4 +230,9 @@
     return layout.title;
 }
 
+#pragma mark - segue
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    [self.viewModel prepareForSegue:segue sender:sender];
+}
+
 @end

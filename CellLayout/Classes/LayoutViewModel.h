@@ -42,4 +42,6 @@
  */
 - (NSURL *)urlForScheme:(NSString *)scheme storyboardName:(NSString *)storyboardName;
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;
+
 @end
