@@ -9,6 +9,8 @@
 #import <ReactiveViewModel/ReactiveViewModel.h>
 #import <CoreGraphics/CoreGraphics.h>
 
+@import UIKit;
+
 @class CellLayoutStorage, UITableViewController, RACCommand;
 
 /**
