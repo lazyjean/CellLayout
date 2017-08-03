@@ -216,7 +216,6 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     CellLayoutManager *layoutManager = [self.viewModel.storage layoutManagerForIndexPath:indexPath];
     @weakify(self);
     if (layoutManager.didSelect) {
