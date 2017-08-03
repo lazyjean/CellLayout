@@ -50,4 +50,8 @@
 
 }
 
+- (void)loadData {
+
+}
+
 @end

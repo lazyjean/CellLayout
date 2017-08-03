@@ -46,4 +46,6 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender;
 
+- (void)loadData;
+
 @end

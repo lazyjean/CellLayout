@@ -94,6 +94,9 @@
         self.tableView.refreshControl = [[UIRefreshControl alloc] init];
         self.tableView.refreshControl.rac_command = self.viewModel.pullRefreshCommand;
     }
+
+    //加载数据接口
+    [self.viewModel loadData];
 }
 
 - (void)configHeaderAndFooter {
