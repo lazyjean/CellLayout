@@ -91,8 +91,8 @@
 
     //
     if (self.viewModel.pullRefreshCommand) {
-        self.tableView.refreshControl = [[UIRefreshControl alloc] init];
-        self.tableView.refreshControl.rac_command = self.viewModel.pullRefreshCommand;
+        self.refreshControl = [[UIRefreshControl alloc] init];
+        self.refreshControl.rac_command = self.viewModel.pullRefreshCommand;
     }
 
     //加载数据接口
