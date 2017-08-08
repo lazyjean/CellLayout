@@ -12,7 +12,7 @@
 @interface CellLayoutManager : NSObject <NSCopying>
 
 @property (nonatomic, strong) NSString *identifier;
-@property (nonatomic, copy) void(^configCell)(__weak id cell, __weak UITableViewController *parent);
+@property (nonatomic, copy) void(^configCell)(__weak __kindof UIView *cell, __weak UITableViewController *parent);
 @property (nonatomic, copy) void(^didSelect)(__weak UITableViewController *parent,__weak NSIndexPath *indexPath);
 
 @end

@@ -72,17 +72,15 @@
 
     [storage newLayoutManagerWithIdentifier:@"DemoTableViewCell"];
     
-    storage.layoutManager.configCell = ^(__weak UITableViewCell *cell, UIViewController *parent) {
+    storage.layoutManager.configCell = ^(__weak DemoTableViewCell *cell, UIViewController *parent) {
         @strongify(self);
-        DemoTableViewCell *c = (DemoTableViewCell *)cell;
-        c.dynamicLabel.text = self.dataSource[0];
+        cell.dynamicLabel.text = self.dataSource[0];
     };
     
     [storage newLayoutManagerWithIdentifier:@"DemoTableViewCell"];
-    storage.layoutManager.configCell = ^(__weak UITableViewCell *cell, UIViewController *parent) {
+    storage.layoutManager.configCell = ^(__weak DemoTableViewCell *cell, UIViewController *parent) {
         @strongify(self);
-        DemoTableViewCell *c = (DemoTableViewCell *)cell;
-        c.dynamicLabel.text = self.dataSource[1];
+        cell.dynamicLabel.text = self.dataSource[1];
     };
     
     self.storage = storage;

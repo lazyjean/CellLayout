@@ -237,4 +237,8 @@
     [self.viewModel prepareForSegue:segue sender:sender];
 }
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    [self.viewModel shouldPerformSegueWithIdentifier:identifier sender:sender];
+}
+
 @end

@@ -50,6 +50,10 @@
 
 }
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+
+}
+
 - (void)loadData {
 
 }
