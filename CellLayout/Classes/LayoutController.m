@@ -238,7 +238,7 @@
 }
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-    [self.viewModel shouldPerformSegueWithIdentifier:identifier sender:sender];
+    return [self.viewModel shouldPerformSegueWithIdentifier:identifier sender:sender];
 }
 
 @end
