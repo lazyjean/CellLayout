@@ -19,6 +19,6 @@
  */
 @property (nonatomic, strong) NSString *identifier;
 
-@property (nonatomic, copy) void (^configHeader)(UIView *header, UIViewController *parent);
+@property (nonatomic, copy) void (^configHeader)(__weak id header, __weak UITableViewController *parent);
 
 @end

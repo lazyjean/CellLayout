@@ -19,6 +19,6 @@
  */
 @property (nonatomic, strong) NSString *identifier;
 
-@property (nonatomic, copy) void (^configFooter)(UIView *footer, UIViewController *parent);
+@property (nonatomic, copy) void (^configFooter)(__weak id footer, __weak UITableViewController *parent);
 
 @end
