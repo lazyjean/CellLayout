@@ -36,10 +36,6 @@
 
 @end
 
-@interface CellLayoutManager (Internal)
-@property (nonatomic, readwrite) BOOL hasMore;
-@end
-
 @implementation LayoutController
 
 + (instancetype)instantiateWithStoryboardName:(NSString *)storyboardName viewModel:(LayoutViewModel *)viewModel {

@@ -17,7 +17,7 @@
 @property (nonatomic) CGFloat restrictHeigth;
 
 //如果内容实际高度大于限制的高度，则hasMore属性为YES, 否则为NO, 默认为NO
-@property (nonatomic, readonly) BOOL hasMore;
+@property (nonatomic) BOOL hasMore;
 
 @property (nonatomic, copy) void(^configCell)(__weak __kindof UITableViewCell *cell, __weak UITableViewController *parent);
 @property (nonatomic, copy) void(^didSelect)(__weak UITableViewController *parent,__weak NSIndexPath *indexPath);
