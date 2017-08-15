@@ -104,6 +104,9 @@
         }];
     }
 
+    //构造UI
+    [self.viewModel setupUI];
+
     //加载数据接口
     [self.viewModel loadData];
 }

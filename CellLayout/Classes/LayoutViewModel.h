@@ -53,4 +53,6 @@
 
 - (void)loadData;
 
+- (void)setupUI;
+
 @end
