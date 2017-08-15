@@ -54,7 +54,13 @@
     return YES;
 }
 
+//加载数据
 - (void)loadData {
+
+}
+
+//构造UI
+- (void)setupUI {
 
 }
 
