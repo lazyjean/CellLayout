@@ -1,3 +1,4 @@
+# coding: utf-8
 Pod::Spec.new do |s|
   s.name             = "CellLayout"
   s.version          = "1.2.2"
@@ -16,4 +17,5 @@ Pod::Spec.new do |s|
   s.dependency 'ReactiveCocoa', '~> 2.5'
   s.dependency 'UITableView+FDTemplateLayoutCell', '~> 1.6'
   s.dependency 'ReactiveViewModel', '~> 0.3'
+  s.dependency 'SVPullToRefresh', '~> 0.4'
 end

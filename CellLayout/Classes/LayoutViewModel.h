@@ -32,6 +32,9 @@
 //当下拉刷新错发时，该信号触发
 @property (nonatomic, strong) RACCommand *pullRefreshCommand;
 
+//添加底部加载的命令
+@property (nonatomic, strong) RACCommand *infiniteScrollingCommand;
+
 - (void)buildLayoutStorage;
 
 /**

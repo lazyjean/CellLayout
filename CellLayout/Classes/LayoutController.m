@@ -16,6 +16,7 @@
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <ReactiveCocoa/RACEXTScope.h>
 #import "UITableView+FDTemplateLayoutCell.h"
+#import <SVPullToRefresh/UIScrollView+SVInfiniteScrolling.h>
 
 @interface CellLayoutStorage (Internal)
 
@@ -93,6 +94,14 @@
     if (self.viewModel.pullRefreshCommand) {
         self.refreshControl = [[UIRefreshControl alloc] init];
         self.refreshControl.rac_command = self.viewModel.pullRefreshCommand;
+    }
+
+    //
+    if (self.viewModel.infiniteScrollingCommand) {
+        [self.tableView addInfiniteScrollingWithActionHandler:^{
+            @strongify(self);
+            [self.viewModel.infiniteScrollingCommand execute:nil];
+        }];
     }
 
     //加载数据接口
