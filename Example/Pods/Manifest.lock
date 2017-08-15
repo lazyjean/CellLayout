@@ -1,5 +1,5 @@
 PODS:
-  - CellLayout (1.2.2):
+  - CellLayout (1.4.1):
     - ReactiveCocoa (~> 2.5)
     - ReactiveViewModel (~> 0.3)
     - SVPullToRefresh (~> 0.4)
@@ -24,7 +24,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  CellLayout: 9aaff625c3b8be02763ed502c2a8b18f09b2ae55
+  CellLayout: f5929f8125c4a687fd21ba706b1a0043de3191a0
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
   ReactiveViewModel: 58918dcbcec2d3151195ab1ed9163c57a8163999
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c

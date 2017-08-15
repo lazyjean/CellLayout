@@ -36,6 +36,10 @@
 
 @end
 
+@interface CellLayoutManager (Internal)
+@property (nonatomic, readwrite) BOOL hasMore;
+@end
+
 @implementation LayoutController
 
 + (instancetype)instantiateWithStoryboardName:(NSString *)storyboardName viewModel:(LayoutViewModel *)viewModel {
@@ -215,9 +219,13 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     CellLayoutManager *layoutManager = [self.viewModel.storage layoutManagerForIndexPath:indexPath];
-    return [tableView fd_heightForCellWithIdentifier:layoutManager.identifier cacheByIndexPath:indexPath configuration:^(id cell) {
+    CGFloat height = [tableView fd_heightForCellWithIdentifier:layoutManager.identifier cacheByIndexPath:indexPath configuration:^(id cell) {
         layoutManager.configCell(cell, self);
     }];
+
+
+    layoutManager.hasMore = (layoutManager.restrictHeigth > 0 && height > layoutManager.restrictHeigth);
+    return layoutManager.hasMore ? layoutManager.restrictHeigth : height;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
