@@ -17,6 +17,8 @@
  */
 @property (strong, nonatomic) IBOutletCollection(UIView) NSArray *viewsPool;
 
+@property (nonatomic, strong) LayoutViewModel *viewModel;
+
 /**
  *  构造一个LayoutController对象
  *

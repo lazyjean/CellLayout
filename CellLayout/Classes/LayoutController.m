@@ -32,7 +32,7 @@
 
 @interface LayoutController ()
 
-@property (nonatomic, strong) LayoutViewModel *viewModel;
+//@property (nonatomic, strong) LayoutViewModel *viewModel;
 
 @end
 
