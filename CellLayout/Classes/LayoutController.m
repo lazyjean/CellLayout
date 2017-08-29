@@ -19,21 +19,10 @@
 #import <SVPullToRefresh/UIScrollView+SVInfiniteScrolling.h>
 
 @interface CellLayoutStorage (Internal)
-
 - (CellLayoutManager *)layoutManagerForIndexPath:(NSIndexPath *)indexPath;
-
 - (CellLayoutSection *)layoutSectionForSection:(NSInteger)section;
-
 - (NSInteger)numberOfSections;
-
 - (NSInteger)numberOfRowsInSection:(NSInteger)section;
-
-@end
-
-@interface LayoutController ()
-
-//@property (nonatomic, strong) LayoutViewModel *viewModel;
-
 @end
 
 @implementation LayoutController
@@ -80,9 +69,14 @@
         @strongify(self);
         
         //设置导航
-        self.navigationItem.leftBarButtonItem = self.viewModel.storage.leftBarButtonItem;
-        self.navigationItem.rightBarButtonItem = self.viewModel.storage.rightBarButtonItem;
-        
+        if (self.viewModel.storage.leftBarButtonItem) {
+            self.navigationItem.leftBarButtonItem = self.viewModel.storage.leftBarButtonItem;
+        }
+
+        if (self.viewModel.storage.rightBarButtonItem) {
+            self.navigationItem.rightBarButtonItem = self.viewModel.storage.rightBarButtonItem;
+        }
+
         //设置Table的Header和Footer
         [self configHeaderAndFooter];
         
