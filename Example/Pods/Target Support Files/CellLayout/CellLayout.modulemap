@@ -1,0 +1,6 @@
+framework module CellLayout {
+  umbrella header "CellLayout-umbrella.h"
+
+  export *
+  module * { export * }
+}
