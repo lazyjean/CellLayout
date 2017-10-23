@@ -1,7 +1,7 @@
 # coding: utf-8
 Pod::Spec.new do |s|
   s.name             = "CellLayout"
-  s.version          = "1.6.0"
+  s.version          = "2.0.0"
   s.summary          = "Table组件的封装"
 
   s.description      = <<-DESC
@@ -11,11 +11,9 @@ Pod::Spec.new do |s|
   s.license          = 'MIT'
   s.author           = { "LiuZhen" => "lazy66@me.com" }
   s.source           = { :git => "https://git.oschina.net/leeszi/CellLayout.git", :tag => "#{s.version}" }
-  s.ios.deployment_target = '8.0'
-  s.source_files = 'CellLayout/Classes/**/*'
-  s.public_header_files = 'CellLayout/Classes/*.h'
-  s.dependency 'ReactiveCocoa', '~> 2.5'
+  s.ios.deployment_target = '9.0'
+  s.source_files = 'CellLayout/**/*'
+  s.dependency 'ReactiveCocoa', '~> 6.0'
   s.dependency 'UITableView+FDTemplateLayoutCell', '~> 1.6'
-  s.dependency 'ReactiveViewModel', '~> 0.3'
   s.dependency 'SVPullToRefresh', '~> 0.4'
 end
