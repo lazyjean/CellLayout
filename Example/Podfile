@@ -4,4 +4,5 @@ use_frameworks!
 
 target 'CellLayout_Example' do
   pod 'CellLayout', :path => '../'
+  pod 'SDWebImage'
 end
