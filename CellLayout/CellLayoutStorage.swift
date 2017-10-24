@@ -20,8 +20,8 @@ public final class CellLayoutStorage {
         self.observer.send(value: ())
     }
 
-    public func createRow(identifier: String, config:((UITableViewCell) -> Void)?) {
-        let row = CellLayoutRow(identifier: identifier, config)
+    public func createRow(identifier: String, config:((UITableViewCell) -> Void)? = nil, select:(() -> Void)? = nil) {
+        let row = CellLayoutRow(identifier: identifier, config:config, select:select)
         rows.append(row)
     }
 

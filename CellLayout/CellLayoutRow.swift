@@ -10,11 +10,14 @@ import Foundation
 import UIKit
 
 public final class CellLayoutRow {
+
     public var identifier: String
     public var config: ((UITableViewCell) -> Void)?
+    public var select: (() -> Void)?
 
-    init(identifier: String, _ config:((UITableViewCell) -> Void)?) {
+    init(identifier: String, config:((UITableViewCell) -> Void)? = nil, select:(() -> Void)? = nil) {
         self.identifier = identifier
         self.config = config
+        self.select = select
     }
 }

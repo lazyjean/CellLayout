@@ -7,10 +7,17 @@
 
 import UIKit
 import UITableView_FDTemplateLayoutCell
+import ReactiveCocoa
+import ReactiveSwift
 
 class CellLayoutController: UITableViewController {
 
-    var viewModel = CelllayoutViewModel()
+    var viewModel: CelllayoutViewModel!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        tableView.reactive.reloadData <~ self.viewModel.storage.signal
+    }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.storage.rows.count
@@ -32,6 +39,11 @@ class CellLayoutController: UITableViewController {
                 config(a as! UITableViewCell)
             }
         }
+    }
+
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let row = self.viewModel.storage.rows[indexPath.row]
+        row.select?()
     }
 
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {

@@ -30,13 +30,9 @@ class Table: UITableViewController {
             c.summary.text = "在这部书中，霍金带领读者遨游外层空间奇异领域，对遥远星系、黑洞、夸克、“带味”粒子和“自旋”粒子、反物质、“时间箭头”等进行了深入浅出的介绍，并对宇宙是什么样的、空间和时间以及相对论等古老问题做了阐述，使读者初步了解狭义相对论以及时间、宇宙的起源等宇宙学的奥妙"
         })
 
-        self.storage?.createRow(identifier: "book", config: { (cell) in
+        self.storage?.createRow(identifier: "book")
 
-        })
-
-        self.storage?.createRow(identifier: "book", config: { (cell) in
-
-        })
+        self.storage?.createRow(identifier: "book")
 
         self.storage?.createRow(identifier: "container", config: { [weak self](cell) in
             let c = cell as! Cell2
@@ -50,25 +46,15 @@ class Table: UITableViewController {
             self?.collection.view.frame = c.container.bounds
         })
 
-        self.storage?.createRow(identifier: "book", config: { (cell) in
+        self.storage?.createRow(identifier: "book")
 
-        })
+        self.storage?.createRow(identifier: "book")
 
-        self.storage?.createRow(identifier: "book", config: { (cell) in
+        self.storage?.createRow(identifier: "book")
 
-        })
+        self.storage?.createRow(identifier: "book")
 
-        self.storage?.createRow(identifier: "book", config: { (cell) in
-
-        })
-
-        self.storage?.createRow(identifier: "book", config: { (cell) in
-
-        })
-
-        self.storage?.createRow(identifier: "book", config: { (cell) in
-
-        })
+        self.storage?.createRow(identifier: "book")
 
         self.storage?.createRow(identifier: "book", config: { (cell) in
             let c = cell as! Cell1
@@ -100,18 +86,14 @@ class Table: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = self.storage?.rows[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: row!.identifier, for: indexPath)
-        if let config = row?.config {
-            config(cell)
-        }
+        row?.config?(cell)
         return cell
     }
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let row = self.storage?.rows[indexPath.row]
         return tableView.fd_heightForCell(withIdentifier: row?.identifier, cacheBy: indexPath) { (a) in
-            if let config = row?.config {
-                config(a as! UITableViewCell)
-            }
+            row?.config?(a as! UITableViewCell)
         }
     }
 
