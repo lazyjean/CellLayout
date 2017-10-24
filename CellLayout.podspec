@@ -10,7 +10,8 @@ Pod::Spec.new do |s|
   s.homepage         = "https://gitee.com/leeszi/CellLayout"
   s.license          = 'MIT'
   s.author           = { "LiuZhen" => "lazy66@me.com" }
-  s.source           = { :git => "https://gitee.com/leeszi/CellLayout.git", :tag => "#{s.version}" }
+  s.source           = { :git => "git@gitee.com:leeszi/CellLayout.git", :tag => "#{s.version}" }
+
   s.ios.deployment_target = '9.0'
   s.source_files = 'CellLayout/**/*'
   s.dependency 'ReactiveCocoa', '~> 6.0'
