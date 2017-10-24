@@ -7,6 +7,6 @@
 
 import Foundation
 
-class CelllayoutViewModel {
+public class CelllayoutViewModel {
     var storage = CellLayoutStorage()
 }

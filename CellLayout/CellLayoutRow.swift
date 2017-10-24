@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-final class CellLayoutRow {
-    var identifier: String
-    var config: ((UITableViewCell) -> Void)?
+public final class CellLayoutRow {
+    public var identifier: String
+    public var config: ((UITableViewCell) -> Void)?
 
     init(identifier: String, _ config:((UITableViewCell) -> Void)?) {
         self.identifier = identifier

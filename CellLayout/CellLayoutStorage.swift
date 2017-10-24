@@ -10,22 +10,26 @@ import Foundation
 import ReactiveSwift
 import Result
 
-final class CellLayoutStorage {
+public final class CellLayoutStorage {
 
     let (signal, observer) = Signal<(), NoError>.pipe()
 
-    var rows = [CellLayoutRow]()
+    public var rows = [CellLayoutRow]()
 
-    func reloadData() {
+    public func reloadData() {
         self.observer.send(value: ())
     }
 
-    func createRow(identifier: String, config:((UITableViewCell) -> Void)?) {
+    public func createRow(identifier: String, config:((UITableViewCell) -> Void)?) {
         let row = CellLayoutRow(identifier: identifier, config)
         rows.append(row)
     }
 
-    func invalidRows() {
+    public func invalidRows() {
         rows.removeAll()
+    }
+
+    public init() {
+
     }
 }
