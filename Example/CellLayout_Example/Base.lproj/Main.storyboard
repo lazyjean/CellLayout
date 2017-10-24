@@ -13,13 +13,13 @@
         <!--Root View Controller-->
         <scene sceneID="z5x-u6-sIk">
             <objects>
-                <tableViewController id="XGP-Ju-ZrN" customClass="Table" customModule="NewLayout" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="XGP-Ju-ZrN" customClass="Table" customModule="CellLayout_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="YI5-vg-jYO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="book" rowHeight="105" id="xl1-nl-aAE" customClass="Cell1" customModule="NewLayout" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="book" rowHeight="105" id="xl1-nl-aAE" customClass="Cell1" customModule="CellLayout_Example" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="105"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="xl1-nl-aAE" id="7mk-gw-2ry">
@@ -70,7 +70,7 @@
                                     <segue destination="4t5-Gc-SCT" kind="show" id="RJr-dg-UWa"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="container" rowHeight="100" id="3wW-UM-vQg" customClass="Cell2" customModule="NewLayout" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="container" rowHeight="100" id="3wW-UM-vQg" customClass="Cell2" customModule="CellLayout_Example" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="133" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3wW-UM-vQg" id="QF6-Nn-HYF">
@@ -111,7 +111,7 @@
         <!--CollectionVC-->
         <scene sceneID="4iu-b9-kqX">
             <objects>
-                <collectionViewController storyboardIdentifier="collection" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VrR-VV-J1Q" customClass="CollectionVC" customModule="NewLayout" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="collection" useStoryboardIdentifierAsRestorationIdentifier="YES" id="VrR-VV-J1Q" customClass="CollectionVC" customModule="CellLayout_Example" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="9cB-mT-8qR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -123,7 +123,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="PHP-vw-T0M" customClass="CollectionViewCell" customModule="NewLayout" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="PHP-vw-T0M" customClass="CollectionViewCell" customModule="CellLayout_Example" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="72" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -172,7 +172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EEy-K0-fDJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1636" y="861"/>
+            <point key="canvasLocation" x="1599" y="860"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="upJ-hZ-bmk">
@@ -192,6 +192,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="YCv-Ad-kcB"/>
+        <segue reference="RJr-dg-UWa"/>
     </inferredMetricsTieBreakers>
 </document>
