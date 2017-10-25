@@ -7,34 +7,31 @@
 //
 
 import UIKit
+import ReactiveSwift
 
 private let reuseIdentifier = "Cell"
 
+extension Reactive where Base: CollectionVC {
+    var data: BindingTarget<[Int]?> {
+        return makeBindingTarget({ (base, value) in
+            base.data = value
+            base.collectionView?.reloadData()
+        })
+    }
+}
+
 class CollectionVC: UICollectionViewController {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print("view did load")
-    }
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("view will appear")
-    }
-
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        print("view did appear, navigation controller is \(self.navigationController), parent is \(self.parent)")
-    }
+    var data: [Int]?
     
     // MARK: UICollectionViewDataSource
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return data?.count ?? 0
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionViewCell
-        cell.title.text = "\(indexPath.row + 1)"
+        cell.title.text = "\(data![indexPath.row])"
         return cell
     }
 }

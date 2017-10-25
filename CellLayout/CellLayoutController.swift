@@ -9,21 +9,24 @@ import UIKit
 import UITableView_FDTemplateLayoutCell
 import ReactiveCocoa
 import ReactiveSwift
+import SVPullToRefresh
 
-class CellLayoutController: UITableViewController {
+open class CellLayoutController<VM:CelllayoutViewModel>: UITableViewController {
 
-    var viewModel: CelllayoutViewModel!
+    open var viewModel: VM!
 
-    override func viewDidLoad() {
+    open override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.reactive.reloadData <~ self.viewModel.storage.signal
+        self.viewModel = VM()
+        self.viewModel.build()
+        tableView.reactive.reloadData <~ self.viewModel.signal
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    open override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.storage.rows.count
     }
 
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    open override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let row = self.viewModel.storage.rows[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: row.identifier, for: indexPath)
         if let config = row.config {
@@ -32,7 +35,7 @@ class CellLayoutController: UITableViewController {
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    open override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let row = self.viewModel.storage.rows[indexPath.row]
         return tableView.fd_heightForCell(withIdentifier: row.identifier, cacheBy: indexPath) { (a) in
             if let config = row.config {
@@ -41,16 +44,16 @@ class CellLayoutController: UITableViewController {
         }
     }
 
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    open override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let row = self.viewModel.storage.rows[indexPath.row]
         row.select?()
     }
 
-    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    open override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 0.1
     }
 
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    open override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 0.1
     }
 }

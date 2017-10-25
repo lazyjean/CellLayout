@@ -18,6 +18,7 @@
 		ED9433811F9E0CE1005633B6 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED94337F1F9E0CE1005633B6 /* CollectionViewCell.swift */; };
 		ED9433821F9E0CE1005633B6 /* CollectionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9433801F9E0CE1005633B6 /* CollectionVC.swift */; };
 		ED9433831F9E0F58005633B6 /* CellLayout.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED9433841F9E0F58005633B6 /* CellLayout.framework */; };
+		ED9433861FA0281B005633B6 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9433851FA0281B005633B6 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		ED94337F1F9E0CE1005633B6 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		ED9433801F9E0CE1005633B6 /* CollectionVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionVC.swift; sourceTree = "<group>"; };
 		ED9433841F9E0F58005633B6 /* CellLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CellLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED9433851FA0281B005633B6 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		FEF12028F3D9F10B77566259 /* Pods-CellLayout_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CellLayout_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-CellLayout_Example/Pods-CellLayout_Example.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,6 +124,7 @@
 				ED9433701F9E0A73005633B6 /* Assets.xcassets */,
 				ED9433721F9E0A73005633B6 /* LaunchScreen.storyboard */,
 				ED9433751F9E0A73005633B6 /* Info.plist */,
+				ED9433851FA0281B005633B6 /* ViewModel.swift */,
 			);
 			path = CellLayout_Example;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				ED94337A1F9E0CCE005633B6 /* Table.swift in Sources */,
 				ED9433821F9E0CE1005633B6 /* CollectionVC.swift in Sources */,
 				ED9433681F9E0A73005633B6 /* AppDelegate.swift in Sources */,
+				ED9433861FA0281B005633B6 /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,13 +12,7 @@ import Result
 
 public final class CellLayoutStorage {
 
-    let (signal, observer) = Signal<(), NoError>.pipe()
-
     public var rows = [CellLayoutRow]()
-
-    public func reloadData() {
-        self.observer.send(value: ())
-    }
 
     public func createRow(identifier: String, config:((UITableViewCell) -> Void)? = nil, select:(() -> Void)? = nil) {
         let row = CellLayoutRow(identifier: identifier, config:config, select:select)
