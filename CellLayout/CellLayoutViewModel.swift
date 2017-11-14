@@ -9,7 +9,7 @@ import Foundation
 import ReactiveSwift
 import Result
 
-open class CelllayoutViewModel {
+open class CellLayoutViewModel {
 
     let (signal, observer) = Signal<(), NoError>.pipe()
 

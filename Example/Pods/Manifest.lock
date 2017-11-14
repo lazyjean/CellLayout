@@ -1,5 +1,5 @@
 PODS:
-  - CellLayout (2.0.0):
+  - CellLayout (2.0.0-alpha4):
     - ReactiveCocoa (~> 6.0)
     - SVPullToRefresh (~> 0.4)
     - UITableView+FDTemplateLayoutCell (~> 1.6)
@@ -23,7 +23,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  CellLayout: d8c5129ad4bc75bc7d9a4b63ed56c92a6757180e
+  CellLayout: 832adc798442c789e3fa6d478390d7560321ea8e
   ReactiveCocoa: 9dcbd8275374f35a6e5fcce01a93b860a7b92c44
   ReactiveSwift: 60a29ff35988a964fd2bb759755cb6594de523fc
   Result: d2d07204ce72856f1fd9130bbe42c35a7b0fea10

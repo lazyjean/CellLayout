@@ -1,16 +1,16 @@
 {
   "name": "CellLayout",
-  "version": "2.0.0",
+  "version": "2.0.0-alpha4",
   "summary": "Table组件的封装",
   "description": "这个组件结合storybaord，可以高效的开发Table类型的页面，动态高度可变的Cell",
-  "homepage": "http://git.oschina.net/leeszi/CellLayout",
+  "homepage": "https://gitee.com/leeszi/CellLayout",
   "license": "MIT",
   "authors": {
     "LiuZhen": "lazy66@me.com"
   },
   "source": {
-    "git": "https://git.oschina.net/leeszi/CellLayout.git",
-    "tag": "2.0.0"
+    "git": "git@gitee.com:leeszi/CellLayout.git",
+    "tag": "2.0.0-alpha4"
   },
   "platforms": {
     "ios": "9.0"

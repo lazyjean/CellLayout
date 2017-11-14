@@ -11,7 +11,7 @@ import CellLayout
 import ReactiveSwift
 import Result
 
-class ViewModel: CelllayoutViewModel {
+class ViewModel: CellLayoutViewModel {
 
     var containerData = MutableProperty<(UIView, [Int])?>(nil)
 

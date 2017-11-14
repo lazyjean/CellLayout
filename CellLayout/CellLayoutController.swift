@@ -11,9 +11,9 @@ import ReactiveCocoa
 import ReactiveSwift
 import SVPullToRefresh
 
-open class CellLayoutController<VM:CelllayoutViewModel>: UITableViewController {
+open class CellLayoutController<VM:CellLayoutViewModel>: UITableViewController {
 
-    open var viewModel: VM!
+    open var viewModel = VM()
 
     open override func viewDidLoad() {
         super.viewDidLoad()
