@@ -17,7 +17,6 @@ open class CellLayoutController<VM:CellLayoutViewModel>: UITableViewController {
 
     open override func viewDidLoad() {
         super.viewDidLoad()
-        self.viewModel = VM()
         self.viewModel.build()
         tableView.reactive.reloadData <~ self.viewModel.signal
     }
