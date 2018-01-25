@@ -14,8 +14,8 @@ public final class CellLayoutStorage {
 
     public var rows = [CellLayoutRow]()
 
-    public func createRow(identifier: String, config:((UITableViewCell) -> Void)? = nil, select:(() -> Void)? = nil) {
-        let row = CellLayoutRow(identifier: identifier, config:config, select:select)
+    public func createRow(identifier: String, isOverlay: Bool = false, config:((UITableViewCell) -> Void)? = nil, select:(() -> Void)? = nil) {
+        let row = CellLayoutRow(identifier: identifier, isOverlay: isOverlay, config:config, select:select)
         rows.append(row)
     }
 

@@ -36,6 +36,10 @@ open class CellLayoutController<VM:CellLayoutViewModel>: UITableViewController {
 
     open override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         let row = self.viewModel.storage.rows[indexPath.row]
+        if row.isOverlay {
+            return tableView.frame.height
+        }
+        
         return tableView.fd_heightForCell(withIdentifier: row.identifier, cacheBy: indexPath) { (a) in
             if let config = row.config {
                 config(a as! UITableViewCell)
