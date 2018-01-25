@@ -18,7 +18,7 @@
   "source_files": "CellLayout/**/*",
   "dependencies": {
     "ReactiveCocoa": [
-      "~> 7.0"
+      "~> 7.1"
     ],
     "UITableView+FDTemplateLayoutCell": [
       "~> 1.6"
