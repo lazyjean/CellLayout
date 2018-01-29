@@ -20,5 +20,6 @@ public final class CellLayoutRow {
         self.identifier = identifier
         self.config = config
         self.select = select
+        self.isOverlay = isOverlay
     }
 }
