@@ -30,7 +30,7 @@ class Table: CellLayoutController<ViewModel> {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        collection = self.storyboard!.instantiateViewController(withIdentifier: "collection") as! CollectionVC
+        collection = self.storyboard!.instantiateViewController(withIdentifier: "collection") as? CollectionVC
         self.reactive.banner <~ self.viewModel.containerData
 
         tableView.addInfiniteScrolling {
@@ -52,5 +52,11 @@ class Table: CellLayoutController<ViewModel> {
         container.addSubview(collection.view)
         collection.didMove(toParentViewController: self)
         collection.view.frame = container.bounds
+    }
+    
+    @IBAction func add(_ sender: Any) {
+        let row = CellLayoutRow(identifier: "book")
+//        self.viewModel.insertRows(at: [row], with: .top)
+        self.viewModel.insertRows(at: [row], with: .bottom)
     }
 }

@@ -18,10 +18,12 @@ open class CellLayoutController<VM:CellLayoutViewModel>: UITableViewController {
     open override func viewDidLoad() {
         super.viewDidLoad()
         self.viewModel.build()
-        tableView.reactive.reloadData <~ self.viewModel.signal
+        tableView.reactive.reloadData <~ self.viewModel.reload
+        tableView.reactive.insertRows <~ self.viewModel.insert
     }
 
     open override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print("number of rows in section \(section) is \(self.viewModel.storage.rows.count)")
         return self.viewModel.storage.rows.count
     }
 

@@ -16,7 +16,7 @@ public final class CellLayoutRow {
     public var select: (() -> Void)?
     public var isOverlay: Bool = false
     
-    init(identifier: String, isOverlay: Bool = false, config:((UITableViewCell) -> Void)? = nil, select:(() -> Void)? = nil) {
+    public init(identifier: String, isOverlay: Bool = false, config:((UITableViewCell) -> Void)? = nil, select:(() -> Void)? = nil) {
         self.identifier = identifier
         self.config = config
         self.select = select

@@ -11,11 +11,12 @@ import Result
 
 open class CellLayoutViewModel: NSObject {
 
-    let (signal, observer) = Signal<(), NoError>.pipe()
+    let (reload, reloadObserver) = Signal<(), NoError>.pipe()
+    let (insert, insertObserver) = Signal<([IndexPath], UITableView.RowAnimation), NoError>.pipe()
 
     public func reloadData() {
         self.build()
-        self.observer.send(value: ())
+        self.reloadObserver.send(value: ())
     }
     
     public var storage = CellLayoutStorage()
@@ -31,5 +32,20 @@ open class CellLayoutViewModel: NSObject {
 
     required public override init() {
         
+    }
+    
+    open func insertRows(at: [CellLayoutRow], with: UITableViewRowAnimation) {
+        var indexed:[IndexPath] = []
+        for i in 0..<at.count {
+            switch with {
+            case .top:
+                indexed.insert((IndexPath(row: i, section: 0)), at: i)
+                storage.rows.insert(at[i], at: i)
+            default:
+                indexed.append(IndexPath(row: storage.rows.count, section: 0))
+                storage.rows.append(at[i])
+            }
+        }
+        self.insertObserver.send(value: (indexed, with))
     }
 }
