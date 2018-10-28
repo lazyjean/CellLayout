@@ -34,7 +34,7 @@ open class CellLayoutViewModel: NSObject {
         
     }
     
-    open func insertRows(at: [CellLayoutRow], with: UITableViewRowAnimation) {
+    open func insertRows(at: [CellLayoutRow], with: UITableView.RowAnimation) {
         var indexed:[IndexPath] = []
         for i in 0..<at.count {
             switch with {

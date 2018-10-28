@@ -46,11 +46,11 @@ class Table: CellLayoutController<ViewModel> {
 
     //显示子控制器
     func showIn(in container: UIView) {
-        collection.removeFromParentViewController()
-        addChildViewController(collection)
-        collection.willMove(toParentViewController: self)
+        collection.removeFromParent()
+        addChild(collection)
+        collection.willMove(toParent: self)
         container.addSubview(collection.view)
-        collection.didMove(toParentViewController: self)
+        collection.didMove(toParent: self)
         collection.view.frame = container.bounds
     }
     
