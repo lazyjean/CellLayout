@@ -15,12 +15,19 @@ extension Reactive where Base: UITableView {
         })
     }
     
-    public var scrollsToBottom: BindingTarget<(UITableView.ScrollPosition)> {
+    public var scrollTable: BindingTarget<(UITableView.ScrollPosition)> {
         return makeBindingTarget({ (base, args) in
-            let sec = base.numberOfSections - 1
-            let row = base.numberOfRows(inSection: sec) - 1
             DispatchQueue.main.async {
-                base.scrollToRow(at: IndexPath(row: row, section: sec), at: args, animated: true)
+                switch args {
+                case .top:
+                    base.scrollToRow(at: IndexPath(row: 0, section: 0), at: UITableView.ScrollPosition.top, animated: true)
+                case .bottom:
+                    let sec = base.numberOfSections - 1
+                    let row = base.numberOfRows(inSection: sec) - 1
+                    base.scrollToRow(at: IndexPath(row: row, section: sec), at: args, animated: true)
+                default:
+                    break
+                }
             }
         })
     }

@@ -59,4 +59,16 @@ class Table: CellLayoutController<ViewModel> {
 //        self.viewModel.insertRows(at: [row], with: .top)
         self.viewModel.insertRows(at: [row], with: .bottom)
     }
+    
+    @IBAction func scroll(_ sender: Any) {
+        let segment = sender as! UISegmentedControl
+        switch segment.selectedSegmentIndex {
+        case 0:
+            self.viewModel.scrollsToTop()
+        case 1:
+            self.viewModel.scrollsToBottom()
+        default:
+            break
+        }
+    }
 }
