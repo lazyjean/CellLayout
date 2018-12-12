@@ -14,4 +14,14 @@ extension Reactive where Base: UITableView {
             base.insertRows(at: args.0, with: args.1)
         })
     }
+    
+    public var scrollsToBottom: BindingTarget<(UITableView.ScrollPosition)> {
+        return makeBindingTarget({ (base, args) in
+            let sec = base.numberOfSections - 1
+            let row = base.numberOfRows(inSection: sec) - 1
+            DispatchQueue.main.async {
+                base.scrollToRow(at: IndexPath(row: row, section: sec), at: args, animated: true)
+            }
+        })
+    }
 }

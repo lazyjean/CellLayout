@@ -1,7 +1,7 @@
 # coding: utf-8
 Pod::Spec.new do |s|
   s.name             = "CellLayout"
-  s.version          = "3.3.0"
+  s.version          = "3.4.0"
   s.summary          = "Table组件的封装"
 
   s.description      = <<-DESC

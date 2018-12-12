@@ -20,6 +20,7 @@ open class CellLayoutController<VM:CellLayoutViewModel>: UITableViewController {
         self.viewModel.build()
         tableView.reactive.reloadData <~ self.viewModel.reload
         tableView.reactive.insertRows <~ self.viewModel.insert
+        tableView.reactive.scrollsToBottom <~ self.viewModel.scrollsToBottom
     }
 
     open override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
