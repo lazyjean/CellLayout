@@ -29,7 +29,9 @@ extension Reactive where Base: UITableView {
                 case .bottom:
                     let sec = base.numberOfSections - 1
                     let row = base.numberOfRows(inSection: sec) - 1
-                    base.scrollToRow(at: IndexPath(row: row, section: sec), at: scrollPosition, animated: true)
+                    if row >= 0, sec >= 0 {
+                        base.scrollToRow(at: IndexPath(row: row, section: sec), at: scrollPosition, animated: true)
+                    }
                 default:
                     break
                 }
