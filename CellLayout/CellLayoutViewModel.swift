@@ -13,6 +13,7 @@ open class CellLayoutViewModel: NSObject {
 
     let (reload, reloadObserver) = Signal<(), NoError>.pipe()
     let (insert, insertObserver) = Signal<([IndexPath], UITableView.RowAnimation), NoError>.pipe()
+    
     public let scroll = MutableProperty<UITableView.ScrollPosition?>(nil)
 
     public func reloadData() {

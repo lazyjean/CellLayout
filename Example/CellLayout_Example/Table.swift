@@ -56,8 +56,8 @@ class Table: CellLayoutController<ViewModel> {
     
     @IBAction func add(_ sender: Any) {
         let row = CellLayoutRow(identifier: "book")
-//        self.viewModel.insertRows(at: [row], with: .top)
         self.viewModel.insertRows(at: [row], with: .bottom)
+        self.viewModel.scrollsToBottom()
     }
     
     @IBAction func scroll(_ sender: Any) {
