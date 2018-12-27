@@ -14,7 +14,7 @@ open class CellLayoutViewModel: NSObject {
     let (reload, reloadObserver) = Signal<(), NoError>.pipe()
     let (insert, insertObserver) = Signal<([IndexPath], UITableView.RowAnimation), NoError>.pipe()
     
-    public let scroll = MutableProperty<UITableView.ScrollPosition?>(nil)
+    public let scroll = MutableProperty<(UITableView.ScrollPosition?, Bool)?>(nil)
 
     public func reloadData() {
         self.build()
@@ -52,10 +52,10 @@ open class CellLayoutViewModel: NSObject {
     }
     
     public func scrollsToBottom() {
-        self.scroll.value = .bottom
+        self.scroll.value = (.bottom, true)
     }
     
     public func scrollsToTop() {
-        self.scroll.value = .top
+        self.scroll.value = (.top, true)
     }
 }
