@@ -50,15 +50,15 @@ open class CellLayoutViewModel: NSObject {
         self.insert.value = (indexed, with)
     }
     
-    public func scrollsToBottom() {
+    public func scrollsToBottom(animated: Bool = true) {
         if self.storage.rows.count > 0 {
-            self.scroll.value = (IndexPath(row: self.storage.rows.count - 1, section: 0), .bottom, true)
+            self.scroll.value = (IndexPath(row: self.storage.rows.count - 1, section: 0), .bottom, animated)
         }
     }
     
-    public func scrollsToTop() {
+    public func scrollsToTop(animated: Bool = true) {
         if self.storage.rows.count > 0 {
-            self.scroll.value = (IndexPath(row: 0, section: 0), .top, true)
+            self.scroll.value = (IndexPath(row: 0, section: 0), .top, animated)
         }
     }
 }
