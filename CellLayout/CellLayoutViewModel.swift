@@ -12,9 +12,8 @@ import Result
 open class CellLayoutViewModel: NSObject {
 
     let (reload, reloadObserver) = Signal<(), NoError>.pipe()
-    let (insert, insertObserver) = Signal<([IndexPath], UITableView.RowAnimation), NoError>.pipe()
-    
-    public let scroll = MutableProperty<(UITableView.ScrollPosition?, Bool)?>(nil)
+    public let insert = MutableProperty<([IndexPath], UITableView.RowAnimation)?>(nil)
+    public let scroll = MutableProperty<(IndexPath, UITableView.ScrollPosition, Bool)?>(nil)
 
     public func reloadData() {
         self.build()
@@ -48,14 +47,18 @@ open class CellLayoutViewModel: NSObject {
                 storage.rows.append(at[i])
             }
         }
-        self.insertObserver.send(value: (indexed, with))
+        self.insert.value = (indexed, with)
     }
     
     public func scrollsToBottom() {
-        self.scroll.value = (.bottom, true)
+        if self.storage.rows.count > 0 {
+            self.scroll.value = (IndexPath(row: self.storage.rows.count - 1, section: 0), .bottom, true)
+        }
     }
     
     public func scrollsToTop() {
-        self.scroll.value = (.top, true)
+        if self.storage.rows.count > 0 {
+            self.scroll.value = (IndexPath(row: 0, section: 0), .top, true)
+        }
     }
 }
