@@ -1,5 +1,5 @@
 PODS:
-  - CellLayout (3.7.0):
+  - CellLayout (3.7.2):
     - ReactiveCocoa (~> 8.0.2)
     - SVPullToRefresh (~> 0.4)
     - "UITableView+FDTemplateLayoutCell (~> 1.6)"
@@ -7,10 +7,10 @@ PODS:
     - ReactiveSwift (~> 4.0)
   - ReactiveSwift (4.0.0):
     - Result (~> 4.0)
-  - Result (4.0.0)
-  - SDWebImage (4.4.2):
-    - SDWebImage/Core (= 4.4.2)
-  - SDWebImage/Core (4.4.2)
+  - Result (4.1.0)
+  - SDWebImage (5.0.1):
+    - SDWebImage/Core (= 5.0.1)
+  - SDWebImage/Core (5.0.1)
   - SVPullToRefresh (0.4.1)
   - "UITableView+FDTemplateLayoutCell (1.6)"
 
@@ -32,14 +32,14 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CellLayout: f5fe706c44f36050e7ab8f45216a53fc7c39ad7f
+  CellLayout: ef4a959df2ff2bb1c1b4257578cd4b6889047115
   ReactiveCocoa: fbd26e9ba60e98417ee47433e59465a98ed9da0f
   ReactiveSwift: a2bb9ace428a109e9c0209615645d9d286c8c433
-  Result: 7645bb3f50c2ce726dd0ff2fa7b6f42bbe6c3713
-  SDWebImage: 624d6e296c69b244bcede364c72ae0430ac14681
+  Result: bd966fac789cc6c1563440b348ab2598cc24d5c7
+  SDWebImage: 27dd2c9ea07a2252f94557c9fbb6105ee94b74c9
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
   "UITableView+FDTemplateLayoutCell": 5c949b4a5059c404b442926c0e80f81d10a2d66f
 
 PODFILE CHECKSUM: 0ae2eb8b0631fbdfbd12a7b2de9c97605ec2ca9f
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.6.0
