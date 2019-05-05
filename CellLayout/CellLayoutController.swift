@@ -31,7 +31,7 @@ open class CellLayoutController<VM:CellLayoutViewModel>: UITableViewController {
         let row = self.viewModel.storage.rows[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: row.identifier, for: indexPath)
         if let config = row.config {
-            config(cell)
+            config(cell, tableView.frame.width)
         }
         return cell
     }
@@ -44,7 +44,7 @@ open class CellLayoutController<VM:CellLayoutViewModel>: UITableViewController {
         
         return tableView.fd_heightForCell(withIdentifier: row.identifier, cacheBy: indexPath) { (a) in
             if let config = row.config {
-                config(a as! UITableViewCell)
+                config(a as! UITableViewCell, tableView.frame.width)
             }
         }
     }

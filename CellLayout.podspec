@@ -1,7 +1,7 @@
 # coding: utf-8
 Pod::Spec.new do |s|
   s.name             = "CellLayout"
-  s.version          = "3.8.1"
+  s.version          = "3.9.0"
   s.summary          = "Table组件的封装"
 
   s.description      = <<-DESC
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.swift_versions    = ['4.2', '5.0']
   s.ios.deployment_target = '9.0'
   s.source_files = 'CellLayout/**/*'
-  s.dependency 'ReactiveCocoa', '~> 8.0.2'
+  s.dependency 'ReactiveCocoa', '~> 10.0.0'
   s.dependency 'UITableView+FDTemplateLayoutCell', '~> 1.6'
   s.dependency 'SVPullToRefresh', '~> 0.4'
 

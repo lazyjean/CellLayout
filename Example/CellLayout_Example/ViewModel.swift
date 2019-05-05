@@ -9,14 +9,13 @@
 import Foundation
 import CellLayout
 import ReactiveSwift
-import Result
 
 class ViewModel: CellLayoutViewModel {
 
     var containerData = MutableProperty<(UIView, [Int])?>(nil)
 
-    var pull: Action<(), (), AnyError> {
-        return Action(execute: { () -> SignalProducer<(), AnyError> in
+    var pull: Action<(), (), Swift.Error> {
+        return Action(execute: { () -> SignalProducer<(), Swift.Error> in
             return SignalProducer { observer,_ in
                 print("pulling...")
                 DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 10, execute: {
@@ -30,7 +29,7 @@ class ViewModel: CellLayoutViewModel {
     
     override func buildLayout() {
 
-        self.storage.createRow(identifier: "book", config: { (cell) in
+        self.storage.createRow(identifier: "book", config: { (cell, _) in
             let c = cell as! Cell1
             c.name.text = "时间简史"
             c.cover.sd_setImage(with: URL(string: "https://gss2.bdstatic.com/9fo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike92%2C5%2C5%2C92%2C30/sign=5dbf2f9377cf3bc7fc0dc5beb069d1c4/0bd162d9f2d3572c2b694f428d13632763d0c3a1.jpg"), completed: nil)
@@ -43,6 +42,7 @@ class ViewModel: CellLayoutViewModel {
 
         self.storage.createRow(identifier: "container", config: {
             let cell = $0 as! Cell2
+            let _ = $1
             self.containerData.value = (cell.container, [1,3,7,2,3,7,5,8,4,9,8])
         })
 
@@ -56,22 +56,22 @@ class ViewModel: CellLayoutViewModel {
 
         self.storage.createRow(identifier: "book")
 
-        self.storage.createRow(identifier: "book", config: { (cell) in
+        self.storage.createRow(identifier: "book", config: { (cell, _) in
             let c = cell as! Cell1
             c.cover.sd_setImage(with: URL(string: "https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign=c559daa417950a7b613846966bb809bc/f31fbe096b63f624e231b8918d44ebf81a4ca330.jpg"), completed: nil)
         })
 
-        self.storage.createRow(identifier: "book", config: { (cell) in
+        self.storage.createRow(identifier: "book", config: { (cell, _) in
             let c = cell as! Cell1
             c.cover.sd_setImage(with: URL(string: "https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign=c559daa417950a7b613846966bb809bc/f31fbe096b63f624e231b8918d44ebf81a4ca330.jpg"), completed: nil)
         })
 
-        self.storage.createRow(identifier: "book", config: { (cell) in
+        self.storage.createRow(identifier: "book", config: { (cell, _) in
             let c = cell as! Cell1
             c.cover.sd_setImage(with: URL(string: "https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign=c559daa417950a7b613846966bb809bc/f31fbe096b63f624e231b8918d44ebf81a4ca330.jpg"), completed: nil)
         })
 
-        self.storage.createRow(identifier: "book", config: { (cell) in
+        self.storage.createRow(identifier: "book", config: { (cell, _) in
             let c = cell as! Cell1
             c.cover.sd_setImage(with: URL(string: "https://gss1.bdstatic.com/9vo3dSag_xI4khGkpoWK1HF6hhy/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign=c559daa417950a7b613846966bb809bc/f31fbe096b63f624e231b8918d44ebf81a4ca330.jpg"), completed: nil)
         })

@@ -7,11 +7,10 @@
 
 import Foundation
 import ReactiveSwift
-import Result
 
 open class CellLayoutViewModel: NSObject {
 
-    let (reload, reloadObserver) = Signal<(), NoError>.pipe()
+    let (reload, reloadObserver) = Signal<(), Never>.pipe()
     public let insert = MutableProperty<([IndexPath], UITableView.RowAnimation)?>(nil)
     public let scroll = MutableProperty<(IndexPath, UITableView.ScrollPosition, Bool)?>(nil)
 
