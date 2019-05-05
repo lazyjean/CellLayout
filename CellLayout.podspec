@@ -1,7 +1,7 @@
 # coding: utf-8
 Pod::Spec.new do |s|
   s.name             = "CellLayout"
-  s.version          = "3.9.0"
+  s.version          = "3.9.1"
   s.summary          = "Table组件的封装"
 
   s.description      = <<-DESC
@@ -11,7 +11,7 @@ Pod::Spec.new do |s|
   s.license          = 'MIT'
   s.author           = { "LiuZhen" => "lazy66@me.com" }
   s.source           = { :git => "https://github.com/lazyjean/CellLayout.git", :tag => "#{s.version}" }
-  s.swift_versions    = ['4.2', '5.0']
+  s.swift_versions    = ['5.0']
   s.ios.deployment_target = '9.0'
   s.source_files = 'CellLayout/**/*'
   s.dependency 'ReactiveCocoa', '~> 10.0.0'
