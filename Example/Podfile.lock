@@ -1,10 +1,10 @@
 PODS:
   - CellLayout (3.9.1):
-    - ReactiveCocoa (~> 10.0.0)
+    - ReactiveCocoa (~> 10.1.0)
     - SVPullToRefresh (~> 0.4.1)
     - "UITableView+FDTemplateLayoutCell (~> 1.6)"
-  - ReactiveCocoa (10.0.0):
-    - ReactiveSwift (~> 6.0)
+  - ReactiveCocoa (10.1.0):
+    - ReactiveSwift (~> 6.1)
   - ReactiveSwift (6.1.0)
   - SDWebImage (5.2.3):
     - SDWebImage/Core (= 5.2.3)
@@ -29,8 +29,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  CellLayout: 28e97c1172c4400de79eb164ed66e78182b652c5
-  ReactiveCocoa: 6d4c37ba236f5d9a7a55b2172cd09f19ba85f574
+  CellLayout: e36d62aea77ee0d2a80a8d24ca388649fde11c89
+  ReactiveCocoa: 2f1d942d79072eded6d8c3bc7c2a641d40855a56
   ReactiveSwift: b78c7259f8ca46368238c895ae33a6a3bf9f811c
   SDWebImage: 46a7f73228f84ce80990c786e4372cf4db5875ce
   SVPullToRefresh: ba2e718695a43253d8bea6852d2960097dc15d8c
